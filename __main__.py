@@ -69,6 +69,6 @@ while True:
     dead = memory.is_dead()
 
     if (percent >= 100 or percent < pdeaf_percent or dead) and deafened:
-            deafen(False)
+        deafen(False)
     elif percent >= deaf_percent and percent < 100 and not deafened:
         deafen(True)
