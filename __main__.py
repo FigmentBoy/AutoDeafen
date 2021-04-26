@@ -23,7 +23,7 @@ def exchange_code(code: int) -> str:
                       headers=headers)
     r.raise_for_status()
 
-    if (r.status_code != 200 or r.text == "-1"):
+    if r.status_code != 200 or r.text == "-1":
         return -1
 
     return r.text
@@ -41,7 +41,7 @@ client.start()
 auth = client.authorize(836272609834434561, ["rpc"])
 code = exchange_code(auth['data']['code'])
 
-if (code == -1):
+if code == -1:
     print("Internal Server Error")
     os.exit(1)
 
@@ -70,5 +70,5 @@ while True:
 
     if (percent >= 100 or percent < pdeaf_percent or dead) and deafened:
             deafen(False)
-    elif (percent >= deaf_percent and percent < 100) and not deafened:
+    elif percent >= deaf_percent and percent < 100 and not deafened:
         deafen(True)
