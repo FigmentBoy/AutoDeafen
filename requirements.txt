@@ -1,3 +1,2 @@
 pypresence==4.2.0
 gd.py==0.11.0
-requests==2.25.0
